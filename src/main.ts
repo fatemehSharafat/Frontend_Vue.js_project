@@ -6,8 +6,8 @@ import 'bootstrap/dist/css/bootstrap.rtl.min.css';
 import './assets/css/variables.css';
 import './assets/css/main.css';
 
-import 'jquery/src/jquery.js';
-import 'popper.js/dist/popper.min.js';
+import 'jquery/dist/jquery.min.js';
+import 'popper.js/dist/popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './assets/js/main.js'
 

@@ -1,4 +1,4 @@
-  /* eslint-env jquery */
+/* eslint-env jquery */
 
 // // Json , Api And Ajax Code Section
 // /**

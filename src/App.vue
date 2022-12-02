@@ -12,7 +12,7 @@
   {{$store.state}}
 <!--  <br>-->
 <!--  {{$route}}-->
-  <router-view />
+  <router-view class="container"/>
 </template>
 
 <script>

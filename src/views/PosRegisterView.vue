@@ -97,19 +97,19 @@
                 <div class="col-md-6 form-group mt-3 mt-md-0">
                   <label for="Fname"> نام <span class='text-danger'>*</span></label>
                   <input type="text" name="Fname" class="form-control" id="Fname"
-                         placeholder="نام خود را وارد كنيد..." required>
+                         placeholder="" required>
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
                   <label for="lname"> نام خانوادگی <span class='text-danger'>*</span></label>
                   <input type="text" name="lname" class="form-control" id="lname"
-                         placeholder="نام خانوادگی خود را وارد كنيد..." required>
+                         placeholder="" required>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-3 form-group mt-3 mt-md-0">
                   <label for="father_name"> نام پدر<span class='text-danger'>*</span> </label>
                   <input type="text" name="father_name" class="form-control" id="father_name"
-                         placeholder="نام پدر خود را وارد كنيد..." required>
+                         placeholder="" required>
                 </div>
                 <div class="col-md-3 form-group mt-3 mt-md-0">
                   <label for="birth"> تاریخ تولد<span class='text-danger'>*</span> </label>
@@ -253,74 +253,208 @@
               </div>
               <div class="row">
                 <label class="form-group">نوع دستگاه:</label>
-                <div class="col-md-4 form-group mt-3 mt-md-0">
+                <div class="col-md-3 form-group mt-3 mt-md-0">
 
-                  <input type="checkbox"  class="checkoption" value="1"  v-model="checked"  @click="check()">
+                  <input type="checkbox" class="checkoption" value="1" v-model="fixed_pos" @click="check()">
                   pos ثابت
                 </div>
-                <div class="col-md-4 form-group mt-3 mt-md-0">
-                  <input type="checkbox" class="checkoption" value="2"  v-model="checked"  @click="check()">
+                <div class="col-md-3 form-group mt-3 mt-md-0">
+                  <input type="checkbox" class="checkoption" value="2" v-model="portable_pos" @click="check()">
                   pos سیار
                 </div>
-                <div class="col-md-4 form-group mt-3 mt-md-0">
-                  <input type="checkbox" class="checkoption" value="3"  v-model="checked"  :click="check()">
+                <div class="col-md-3 form-group mt-3 mt-md-0">
+                  <input type="checkbox" class="checkoption" value="3" v-model="kiosk" @click="check()">
                   کیوسک
                 </div>
               </div>
+              <div class="row">
+                <div class="col-md-12 form-group mt-3 mx-4 mt-md-0" v-if=" this.fixed_pos">
+                  <h6 class="segment-name">نوع بستر ارتباطي كارتخوان ثابت</h6>
+                  <hr>
+                  <div class="col-md-3 form-group mt-3 mt-md-0">
+                    <label for="substrate_type"> بستر ارتباطی <span class='text-danger'>*</span></label>
+                    <select name="substrate_type" class=" form-control" id="substrate_type" required>
+                      <option value="DIUALUP">DIUALUP</option>
+                      <option value="GPRS">GPRS</option>
+                      <option value="COMBO">COMBO</option>
+                      <option value="WIFI">WIFI</option>
+                      <option value="LAN">LAN</option>
+                      <option value="PC">PC</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-12 form-group mt-3  mt-md-0" v-if="this.portable_pos">
+                  <h6 class="segment-name">اطلاعات چك و سفته</h6>
+                  <hr>
+                  <div class="row">
+                    <div class="col-md-4 form-group mt-3 mt-md-0">
+                      <label for="protected_cheque"> شماره چك صيادي چك / سفته <span class='text-danger'>*</span></label>
+                      <input type="number" name="protected_cheque" class="form-control" id="protected_cheque"
+                             placeholder="">
+                    </div>
+                    <div class="col-md-4 form-group mt-3 mt-md-0">
+                      <label for="date_cheque"> تاریخ سررسيد<span class='text-danger'>*</span> </label>
+                      <input type="text" name="date_cheque" class="form-control" id="date_cheque"
+                             placeholder="" data-jdp>
+                    </div>
+                    <div class="col-md-4 form-group mt-3 mt-md-0">
+                      <label for="bankName_cheque">نام بانك <span class='text-danger'>*</span></label>
+                      <input type="text" name="bankName_cheque" class="form-control" id="bankName_cheque"
+                             placeholder="">
+                    </div>
+                    <div class="col-md-3 form-group mt-3 mt-md-0">
+                      <label for="amount_number_cheque"> مبلغ چك / سفته به رقم <span
+                          class='text-danger'>*</span></label>
+                      <input type="number" name="amount_number_cheque" class="form-control" id="amount_number_cheque"
+                             placeholder="">
+                    </div>
+                    <div class="col-md-3 form-group mt-3 mt-md-0">
+                      <label for="amount_letter_cheque">مبلغ چك / سفته به حروف<span class='text-danger'>*</span></label>
+                      <input type="text" name="amount_letter_cheque" class="form-control" id="amount_letter_cheque"
+                             placeholder="">
+                    </div>
+                    <div class="col-md-3 form-group mt-3 mt-md-0">
+                      <label for="account_owner_cheque">نام صاحب حساب <span class='text-danger'>*</span></label>
+                      <input type="text" name="account_owner_cheque" class="form-control" id="account_owner_cheque"
+                             placeholder="">
+                    </div>
+                    <div class="col-md-3 form-group mt-3 mt-md-0">
+                      <label for="iban_cheque"> شماره شبا <span class='text-danger'>*</span></label>
+                      <input type="number" name="iban_cheque" class="form-control" id="iban_cheque"
+                             placeholder="">
+                    </div>
+                    <div class="col-md-3 form-group mt-3 mt-md-0">
+                      <label for="image_cheque">تصوير چك / سفته<span class='text-danger'>*</span></label>
+                      <div class="input-group">
+                        <label class="input-group-btn">
+                                <span class="btn ">
+                                    بارگذاري فايل&hellip;
+                                    <input type="file" name="image_cheque" id="image_cheque" multiple>
+                                </span>
+                        </label>
+                        <input type="text" class="form-control file-name " readonly>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 form-group mt-3 mx-4 mt-md-0" v-if="this.kiosk">
+                  <h6 class="segment-name">نوع كيوسك</h6>
+                  <hr>
+                  <div class="col-md-3 form-group mt-3 mt-md-0">
+                    <label for="kiosk_type"> نوع كيوسك <span class='text-danger'>*</span></label>
+                    <select name="kiosk_type" class=" form-control" id="kiosk_type">
+                      <option value="ديواري">ديواري</option>
+                      <option value="ايستاده">ايستاده</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
             </section>
+            <section class="section-body" name="account-info">
+              <div class="row">
+                <h6 class="segment-name">اطلاعات حساب بانكي</h6>
+                <hr>
+              </div>
+              <div class="row">
+                <div class="col-md-4 form-group mt-3 mt-md-0">
+                  <label for="first_bankName"> نام بانک <span class='text-danger'>*</span></label>
+                  <select name="first_bankName" class=" form-control" id="first_bankName" required>
+                    <option value="ایران زمین">ایران زمین</option>
+                    <option value="آینده">آینده</option>
+                    <option value="پست بانک">پست بانک</option>
+                    <option value="خاورمیانه">خاورمیانه</option>
+                    <option value="دی">دی</option>
+                    <option value="رفاه">رفاه</option>
+                    <option value=" سامان">سامان</option>
+                    <option value="شهر "> شهر</option>
+                    <option value=" صادرات">صادرات</option>
+                    <option value="کشاورزی ">کشاورزی</option>
+                    <option value=" گردشگری">گردشگری</option>
+                    <option value="مسکن "> مسکن</option>
+                    <option value=" ملی"> ملی</option>
+                    <option value="اقتصاد نوین ">اقتصاد نوین</option>
+                    <option value="پارسیان">پارسیان</option>
+                    <option value="تجارت">تجارت</option>
+                    <option value="توسعه تعاون">توسعه تعاون</option>
+                    <option value="سپه">سپه</option>
+                    <option value="سرمایه">سرمایه</option>
+                    <option value="سینا">سینا</option>
+                    <option value="صنعت و معدن">صنعت و معدن</option>
+                    <option value="کار آفرین">کار آفرین</option>
+                  </select>
+                </div>
+                <div class="col-md-4 form-group mt-3 mt-md-0">
+                  <label for="first_bankName"> نام بانک <span class='text-danger'>*</span></label>
+                  <select name="first_bankName" class=" form-control" id="first_bankName" required>
+                    <option value="ایران زمین">ایران زمین</option>
+                    <option value="آینده">آینده</option>
+                    <option value="پست بانک">پست بانک</option>
+                    <option value="خاورمیانه">خاورمیانه</option>
+                    <option value="دی">دی</option>
+                    <option value="رفاه">رفاه</option>
+                    <option value=" سامان">سامان</option>
+                    <option value="شهر "> شهر</option>
+                    <option value=" صادرات">صادرات</option>
+                    <option value="کشاورزی ">کشاورزی</option>
+                    <option value=" گردشگری">گردشگری</option>
+                    <option value="مسکن "> مسکن</option>
+                    <option value=" ملی"> ملی</option>
+                    <option value="اقتصاد نوین ">اقتصاد نوین</option>
+                    <option value="پارسیان">پارسیان</option>
+                    <option value="تجارت">تجارت</option>
+                    <option value="توسعه تعاون">توسعه تعاون</option>
+                    <option value="سپه">سپه</option>
+                    <option value="سرمایه">سرمایه</option>
+                    <option value="سینا">سینا</option>
+                    <option value="صنعت و معدن">صنعت و معدن</option>
+                    <option value="کار آفرین">کار آفرین</option>
+                  </select>
+                </div>
+                <div class="col-md-4 form-group mt-3 mt-md-0">
+                  <label for="first_bankName"> نام بانک <span class='text-danger'>*</span></label>
+                  <select name="first_bankName" class=" form-control" id="first_bankName" required>
+                    <option value="ایران زمین">ایران زمین</option>
+                    <option value="آینده">آینده</option>
+                    <option value="پست بانک">پست بانک</option>
+                    <option value="خاورمیانه">خاورمیانه</option>
+                    <option value="دی">دی</option>
+                    <option value="رفاه">رفاه</option>
+                    <option value=" سامان">سامان</option>
+                    <option value="شهر "> شهر</option>
+                    <option value=" صادرات">صادرات</option>
+                    <option value="کشاورزی ">کشاورزی</option>
+                    <option value=" گردشگری">گردشگری</option>
+                    <option value="مسکن "> مسکن</option>
+                    <option value=" ملی"> ملی</option>
+                    <option value="اقتصاد نوین ">اقتصاد نوین</option>
+                    <option value="پارسیان">پارسیان</option>
+                    <option value="تجارت">تجارت</option>
+                    <option value="توسعه تعاون">توسعه تعاون</option>
+                    <option value="سپه">سپه</option>
+                    <option value="سرمایه">سرمایه</option>
+                    <option value="سینا">سینا</option>
+                    <option value="صنعت و معدن">صنعت و معدن</option>
+                    <option value="کار آفرین">کار آفرین</option>
+                  </select>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <label for="ّfirst_accountNum"> شماره حساب <span class='text-danger'>*</span></label>
+                  <input type="number" name="first_accountNum" class="form-control" id="ّfirst_accountNum"
+                         placeholder="" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <label for="first_shaba_code">شماره شبا اول <span class='text-danger'>*</span></label>
+                  <input type="number" name="first_shaba_code" class="form-control" id="first_shaba_code" placeholder=""
+                         required>
+                </div>
 
+              </div>
+            </section>
             <div class="row">
 
-              <div class="col-md-3 form-group mt-3 mt-md-0">
-                <label for="substrate_type"> بستر ارتباطی <span class='text-danger'>*</span></label>
-                <select name="substrate_type" class=" form-control" id="substrate_type" required>
-                  <option value="DIUALUP">DIUALUP</option>
-                  <option value="GPRS">GPRS</option>
-                  <option value="COMBO">COMBO</option>
-                  <option value="WIFI">WIFI</option>
-                </select>
-              </div>
 
             </div>
-            <div class="row">
-              <div class="col-md-3 form-group mt-3 mt-md-0">
-                <label for="ّfirst_accountNum"> شماره حساب اول <span class='text-danger'>*</span></label>
-                <input type="number" name="first_accountNum" class="form-control" id="ّfirst_accountNum"
-                       placeholder="" required>
-              </div>
-              <div class="col-md-3 form-group mt-3 mt-md-0">
-                <label for="first_bankName"> نام بانک اول <span class='text-danger'>*</span></label>
-                <select name="first_bankName" class=" form-control" id="first_bankName" required>
-                  <option value="ایران زمین">ایران زمین</option>
-                  <option value="آینده">آینده</option>
-                  <option value="پست بانک">پست بانک</option>
-                  <option value="خاورمیانه">خاورمیانه</option>
-                  <option value="دی">دی</option>
-                  <option value="رفاه">رفاه</option>
-                  <option value=" سامان">سامان</option>
-                  <option value="شهر "> شهر</option>
-                  <option value=" صادرات">صادرات</option>
-                  <option value="کشاورزی ">کشاورزی</option>
-                  <option value=" گردشگری">گردشگری</option>
-                  <option value="مسکن "> مسکن</option>
-                  <option value=" ملی"> ملی</option>
-                  <option value="اقتصاد نوین ">اقتصاد نوین</option>
-                  <option value="پارسیان">پارسیان</option>
-                  <option value="تجارت">تجارت</option>
-                  <option value="توسعه تعاون">توسعه تعاون</option>
-                  <option value="سپه">سپه</option>
-                  <option value="سرمایه">سرمایه</option>
-                  <option value="سینا">سینا</option>
-                  <option value="صنعت و معدن">صنعت و معدن</option>
-                  <option value="کار آفرین">کار آفرین</option>
-                </select>
-              </div>
-              <div class="col-md-6 form-group mt-3 mt-md-0">
-                <label for="first_shaba_code">شماره شبا اول <span class='text-danger'>*</span></label>
-                <input type="number" name="first_shaba_code" class="form-control" id="first_shaba_code" placeholder=""
-                       required>
-              </div>
-            </div>
+
             <div class="row">
               <div class="col-md-3 form-group mt-3 mt-md-0">
                 <label for="ّsecond_accountNum"> شماره حساب دوم </label>
@@ -498,17 +632,29 @@
 <script>
 export default {
   name: "PosRegisterView",
-  data(){
-    return{
-
-       }
-    },
-  methods:{
-    check(){
-      if(this.checked==true){
-        console.log("hi")
-      }
+  data() {
+    return {
+      fixed_pos: null,
+      portable_pos: null,
+      kiosk: null,
     }
+  },
+  methods: {
+    check() {
+            if (this.kiosk===true) {
+        this.fixed_pos = false
+        this.portable_pos = false
+      }
+      if (this.fixed_pos===true) {
+        this.portable_pos = false
+        this.kiosk = false
+      }
+      if (this.portable_pos===true) {
+        this.fixed_pos = false
+        this.kiosk = false
+      }
+
+    },
   }
 }
 
