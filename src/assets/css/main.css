@@ -20,7 +20,7 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6, label {
     font-family: "B Homa";
 }
 input::-webkit-outer-spin-button,
@@ -387,10 +387,8 @@ section {
 .pos .pos-form .form-group label{
     color: var(--color-secondary-dark);
 }
-.pos .pos-form input[type=text],
-.pos .pos-form input[type=password],
-.pos .pos-form input[type=date], .pos .pos-form input[type=number],
-.pos .pos-form input[type=file], .pos .pos-form input[type=email],
+.pos .pos-form input,
+.pos .pos-form textarea,
 .pos .pos-form select{
     border-color: var(--color-primary-light);
     color: var(--color-secondary-dark);
