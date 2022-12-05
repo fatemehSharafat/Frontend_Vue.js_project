@@ -1,8 +1,10 @@
 <template>
-  <div class="PosRegidter pos">
+  <!-- ======= pos Register Section ======= -->
+  <div class="PosRegister pos container">
     <section id="pos" class="">
       <div class="container">
         <div class="info">
+          <!-- ======= Header Section ======= -->
           <div class="section-header">
             <div class="row">
               <div class="col-md-3 form-group mt-3 mt-md-0">
@@ -17,7 +19,9 @@
               </div>
             </div>
           </div>
+          <!-- ======= Pos Form Section ======= -->
           <form action="" method="post" role="form" class="pos-form" id="pos-form">
+            <!-- ======= store-info Section ======= -->
             <section class="section-body" name="store-info">
               <div class="row">
                 <h6 class="segment-name"> اطلاعات فروشکاه/شرکت </h6>
@@ -35,8 +39,8 @@
                          placeholder="" required>
                 </div>
                 <div class="col-md-3 form-group mt-3 mt-md-0">
-                  <label for="ownership_type">نوع مالکیت محل فعالیت <span class='text-danger'>*</span></label>
-                  <select name="ownership_type" class=" form-control" id="ownership_type" required>
+                  <label for="ownership">نوع مالکیت محل فعالیت <span class='text-danger'>*</span></label>
+                  <select name="ownership" class=" form-control" id="ownership" required>
                     <option value="ملکی">ملکی</option>
                     <option value="سرقفلی">سرقفلی</option>
                     <option value="استیجاری">استیجاری</option>
@@ -50,16 +54,16 @@
                          placeholder="" required>
                 </div>
                 <div class="col-md-3 form-group mt-3 mt-md-0">
-                  <label for="poscod_pos"> کد پستی محل نصب کارت خوان <span class='text-danger'>*</span></label>
-                  <input type="number" name="poscod_pos" class="form-control" id="poscod_pos"
+                  <label for="store_zipcode"> کد پستی محل نصب کارت خوان <span class='text-danger'>*</span></label>
+                  <input type="number" name="store_zipcode" class="form-control" id="store_zipcode"
                          placeholder="" required>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-                  <label for="business_num"> شماره پروانه کسب/شماره صنفی اجاره نامه <span
+                  <label for="business_license_number"> شماره پروانه کسب/شماره صنفی اجاره نامه <span
                       class='text-danger'>*</span></label>
-                  <input type="number" name="business_num" class="form-control" id="business_num"
+                  <input type="number" name="business_license_number" class="form-control" id="business_license_number"
                          placeholder="" required>
                 </div>
                 <div class="col-md-4 form-group mt-3 mt-md-0">
@@ -77,17 +81,18 @@
               </div>
               <div class="row">
                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <label for="lease_from">مهلت اجاره نامه از تاریخ</label>
-                  <input type="text" name="lease_from" class="form-control" id="lease_from"
+                  <label for="leaseterm_from">مهلت اجاره نامه از تاریخ</label>
+                  <input type="text" name="leaseterm_from" class="form-control" id="leaseterm_from"
                          placeholder="" data-jdp>
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <label for="lease_until">مهلت اجاره نامه تا تاریخ </label>
-                  <input type="text" name="lease_until" class="form-control" id="lease_until"
+                  <label for="leaseterm_to">مهلت اجاره نامه تا تاریخ </label>
+                  <input type="text" name="leaseterm_to" class="form-control" id="leaseterm_to"
                          placeholder="" data-jdp>
                 </div>
               </div>
             </section>
+            <!-- ======= personal-info Section ======= -->
             <section class="section-body" name="personal-info">
               <div class="row">
                 <h6 class="segment-name">اطلاعات مدیر فروشکاه/شرکت</h6>
@@ -95,13 +100,13 @@
               </div>
               <div class="row">
                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <label for="Fname"> نام <span class='text-danger'>*</span></label>
-                  <input type="text" name="Fname" class="form-control" id="Fname"
+                  <label for="first_name"> نام <span class='text-danger'>*</span></label>
+                  <input type="text" name="first_name" class="form-control" id="first_name"
                          placeholder="" required>
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <label for="lname"> نام خانوادگی <span class='text-danger'>*</span></label>
-                  <input type="text" name="lname" class="form-control" id="lname"
+                  <label for="last_name"> نام خانوادگی <span class='text-danger'>*</span></label>
+                  <input type="text" name="last_name" class="form-control" id="last_name"
                          placeholder="" required>
                 </div>
               </div>
@@ -117,35 +122,35 @@
                          placeholder="" required data-jdp>
                 </div>
                 <div class="col-md-3 form-group mt-3 mt-md-0">
-                  <label for="Ncode"> کد ملی / شناسه ملی<span class='text-danger'>*</span></label>
-                  <input type="number" name="Ncode" class="form-control" id="Ncode"
+                  <label for="national_code"> کد ملی / شناسه ملی<span class='text-danger'>*</span></label>
+                  <input type="number" name="national_code" class="form-control" id="national_code"
                          placeholder="" required>
                 </div>
                 <div class="col-md-3 form-group mt-3 mt-md-0">
-                  <label for="series_Ncard"> سریال پشت کارت ملی </label>
-                  <input type="text" name="series_Ncard" class="form-control" id="series_Ncard"
+                  <label for="national_card_series"> سریال پشت کارت ملی </label>
+                  <input type="text" name="national_card_series" class="form-control" id="national_card_series"
                          placeholder="">
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-3 form-group mt-3 mt-md-0">
-                  <label for="id_number"> شماره شناسنامه / کدثبتی<span class='text-danger'>*</span> </label>
-                  <input type="number" name="id_number" class="form-control" id="id_number"
+                  <label for="birthcertificate_number"> شماره شناسنامه / کدثبتی<span class='text-danger'>*</span> </label>
+                  <input type="number" name="birthcertificate_number" class="form-control" id="birthcertificate_number"
                          placeholder="" required>
                 </div>
                 <div class="col-md-3 form-group mt-3 mt-md-0">
-                  <label for="id_serial"> سریال شناسامه<span class='text-danger'>*</span> </label>
-                  <input type="text" name="id_serial" class="form-control" id="id_serial"
+                  <label for="birthcertificate_serial"> سریال شناسامه<span class='text-danger'>*</span> </label>
+                  <input type="text" name="birthcertificate_serial" class="form-control" id="birthcertificate_serial"
                          placeholder="" required>
                 </div>
                 <div class="col-md-3 form-group mt-3 mt-md-0">
-                  <label for="id_series"> سری شناسنامه<span class='text-danger'>*</span> </label>
-                  <input type="text" name="id_series" class="form-control" id="id_series"
+                  <label for="birthcertificate_series"> سری شناسنامه<span class='text-danger'>*</span> </label>
+                  <input type="text" name="birthcertificate_series" class="form-control" id="birthcertificate_series"
                          placeholder="" required>
                 </div>
                 <div class="col-md-3 form-group mt-3 mt-md-0">
-                  <label for="registration"> صادره از/ ثبت شده در<span class='text-danger'>*</span> </label>
-                  <input type="text" name="registration" class="form-control" id="registration"
+                  <label for="issued"> صادره از/ ثبت شده در<span class='text-danger'>*</span> </label>
+                  <input type="text" name="issued" class="form-control" id="issued"
                          placeholder="" required>
                 </div>
 
@@ -186,12 +191,13 @@
                          placeholder="" required>
                 </div>
                 <div class="col-md-3 form-group mt-3 mt-md-0">
-                  <label for="postal_code">کد پستی محل سکونت<span class='text-danger'>*</span> </label>
-                  <input type="number" name="postal_code" class="form-control" id="postal_code"
+                  <label for="home_zipcode">کد پستی محل سکونت<span class='text-danger'>*</span> </label>
+                  <input type="number" name="home_zipcode" class="form-control" id="home_zipcode"
                          placeholder="" required>
                 </div>
               </div>
             </section>
+            <!-- ======= introduce-info Section ======= -->
             <section class="section-body" name="introduce-info">
               <div class="row">
                 <h6 class="segment-name">معرفان</h6>
@@ -246,6 +252,7 @@
                 </div>
               </div>
             </section>
+            <!-- ======= substrate-type Section ======= -->
             <section class="section-body" name="substrate-type">
               <div class="row">
                 <h6 class="segment-name">نوع دستگاه و بستر ارتباطی</h6>
@@ -350,7 +357,8 @@
                 </div>
               </div>
             </section>
-            <section class="section-body" name="account-info">
+            <!-- ======= account-bank-info Section ======= -->
+            <section class="section-body" name="account-bank-info">
               <div class="row">
                 <h6 class="segment-name">اطلاعات حساب بانكي</h6>
                 <hr>
@@ -416,6 +424,7 @@
                 </div>
               </div>
             </section>
+            <!-- ======= psp Section ======= -->
             <section class="section-body" name="psp">
               <div class="row">
                 <h6 class="segment-name"> PSP </h6>
@@ -425,29 +434,30 @@
                 <label class="form-group"><span class='text-danger'>*</span> نوع فرم درخواست: </label>
                 <div class="col-md-2 form-group mt-3 mt-md-0">
 
-                  <input type="checkbox" class="checkoption" value="پرداخت نوين آرين" v-model="fixed_pos"
+                  <input type="checkbox" name="psp" class="checkoption" value="پرداخت نوين آرين" v-model="fixed_pos"
                          @click="check()">
                   پرداخت نوين آرين
                 </div>
                 <div class="col-md-2 form-group mt-3 mt-md-0">
-                  <input type="checkbox" class="checkoption" value="سابين سامان" v-model="portable_pos"
+                  <input type="checkbox" name="psp" class="checkoption" value="سابين سامان" v-model="portable_pos"
                          @click="check()">
                   سابين سامان
                 </div>
                 <div class="col-md-2 form-group mt-3 mt-md-0">
-                  <input type="checkbox" class="checkoption" value="سابين پارسيان" v-model="kiosk" @click="check()">
+                  <input type="checkbox" name="psp" class="checkoption" value="سابين پارسيان" v-model="kiosk" @click="check()">
                   سابين پارسيان
                 </div>
                 <div class="col-md-2 form-group mt-3 mt-md-0">
-                  <input type="checkbox" class="checkoption" value="پرداخت سپهر صادرات">
+                  <input type="checkbox" name="psp" class="checkoption" value="پرداخت سپهر صادرات">
                   پرداخت سپهر صادرات
                 </div>
                 <div class="col-md-2 form-group mt-3 mt-md-0">
-                  <input type="checkbox" class="checkoption" value="فن آوا كارت">
+                  <input type="checkbox" name="psp" class="checkoption" value="فن آوا كارت">
                   فن آوا كارت
                 </div>
               </div>
             </section>
+            <!-- ======= upload-documents Section ======= -->
             <section class="section-body" name="upload-documents">
               <div class="row">
                 <h6 class="segment-name"> بارگذاري مدارك </h6>
@@ -455,25 +465,25 @@
               </div>
               <div class="row">
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-                  <label for="image_permission"> جواز كسب/ اجاره نامه / سند مالكيت / استشهاد نامه <span
+                  <label for="permission_document"> جواز كسب/ اجاره نامه / سند مالكيت / استشهاد نامه <span
                       class='text-danger'>*</span></label>
                   <div class="input-group">
                     <label class="input-group-btn">
                                 <span class="btn ">
                                     بارگذاري فايل&hellip;
-                                    <input type="file" name="image_permission" id="image_permission" required multiple>
+                                    <input type="file" name="permission_document" id="permission_document" required multiple>
                                 </span>
                     </label>
                     <input type="text" class="form-control file-name " readonly>
                   </div>
                 </div>
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-                  <label for="image">تصویر دو صفحه اول شناسنامه<span class='text-danger'>*</span></label>
+                  <label for="birthcertificate_document">تصویر دو صفحه اول شناسنامه<span class='text-danger'>*</span></label>
                   <div class="input-group">
                     <label class="input-group-btn">
                                 <span class="btn ">
                                     بارگذاري فايل&hellip;
-                                    <input type="file" name="image" id="image" required multiple>
+                                    <input type="file" name="birthcertificate_document" id="birthcertificate_document" required multiple>
                                 </span>
                     </label>
                     <input type="text" class="form-control file-name " readonly>
@@ -492,12 +502,12 @@
                   </div>
                 </div>
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-                  <label for="image_sign">تصویر مهر و امضا<span class='text-danger'>*</span></label>
+                  <label for="signatureseal">تصویر مهر و امضا<span class='text-danger'>*</span></label>
                   <div class="input-group">
                     <label class="input-group-btn">
                                 <span class="btn ">
                                     بارگذاري فايل&hellip;
-                                    <input type="file" name="image_sign" id="image_sign" required multiple>
+                                    <input type="file" name="signatureseal" id="signatureseal" required multiple>
                                 </span>
                     </label>
                     <input type="text" class="form-control file-name " readonly>
@@ -517,6 +527,7 @@
                 </div>
               </div>
             </section>
+            <!-- ======= description Section ======= -->
             <section class="section-body" name="description">
               <div class="row">
                 <h6 class="segment-name"> توضيحات </h6>
@@ -550,21 +561,21 @@ export default {
     }
   },
   methods: {
-    check() {
-      if (this.kiosk === true) {
-        this.fixed_pos = false
-        this.portable_pos = false
-      }
-      if (this.fixed_pos === true) {
-        this.portable_pos = false
-        this.kiosk = false
-      }
-      if (this.portable_pos === true) {
-        this.fixed_pos = false
-        this.kiosk = false
-      }
-
-    },
+    // check() {
+    //   if (this.kiosk === true) {
+    //     this.fixed_pos = false
+    //     this.portable_pos = false
+    //   }
+    //   if (this.fixed_pos === true) {
+    //     this.portable_pos = false
+    //     this.kiosk = false
+    //   }
+    //   if (this.portable_pos === true) {
+    //     this.fixed_pos = false
+    //     this.kiosk = false
+    //   }
+    //
+    // },
   }
 }
 
