@@ -6,6 +6,7 @@ import LoginView from '../views/LoginView.vue'
 import LogoutView from '../views/LogoutView.vue'
 import PosListView from "@/views/PosListView.vue";
 import PosRegisterView from "@/views/PosRegisterView.vue";
+import PosRegisterDetailView from "@/views/PosRegisterDetailView.vue"
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -44,6 +45,13 @@ const routes: Array<RouteRecordRaw> = [
         path: '/pos-register',
         name: 'PosRegister',
         component: PosRegisterView,
+        meta: {loginRequires: true}
+
+    },
+    {
+        path: '/pos/:id_number',
+        name: 'PosRegisterDetail',
+        component: PosRegisterDetailView,
         meta: {loginRequires: true}
 
     },
