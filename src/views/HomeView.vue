@@ -2,6 +2,7 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/khadamatik_gorup_name_logo.png">
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <FormRegister></FormRegister>
   </div>
 </template>
 

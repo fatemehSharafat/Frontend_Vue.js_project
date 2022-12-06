@@ -3,11 +3,12 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import 'bootstrap/dist/css/bootstrap.rtl.min.css';
-import '@/assets/css/variables.css';
+import './assets/css/variables.css';
 import '@/assets/css/main.css';
 
 import 'jquery/dist/jquery.min.js';
-import 'popper.js/dist/popper.js';
+import 'ajax/lib/ajax.js'
+import 'popper.js/dist/popper.min.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './assets/js/main.js'
 

@@ -817,44 +817,44 @@ document.addEventListener('DOMContentLoaded', () => {
     /**
      * Upload file
      */
-    $(function() {
-        // We can attach the `fileselect` event to all file inputs on the page
-        $(document).on('change', ':file', function() {
-            var input = $(this),
-                numFiles = input.get(0).files ? input.get(0).files.length : 1,
-                label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
-            input.trigger('fileselect', [numFiles, label]);
-        });
-
-        // We can watch for our custom `fileselect` event like this
-        $(document).ready( function() {
-            $(':file').on('fileselect', function(event, numFiles, label) {
-
-                var input = $(this).parents('.input-group').find(':text'),
-                    log = numFiles > 1 ? numFiles + ' files selected' : label;
-
-                if( input.length ) {
-                    input.val(log);
-                } else {
-                    if( log ) alert(log);
-                }
-
-            });
-        });
-
-    });
+    // $(function() {
+    //     // We can attach the `fileselect` event to all file inputs on the page
+    //     $(document).on('change', ':file', function() {
+    //         var input = $(this),
+    //             numFiles = input.get(0).files ? input.get(0).files.length : 1,
+    //             label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+    //         input.trigger('fileselect', [numFiles, label]);
+    //     });
+    //
+    //     // We can watch for our custom `fileselect` event like this
+    //     $(document).ready( function() {
+    //         $(':file').on('fileselect', function(event, numFiles, label) {
+    //
+    //             var input = $(this).parents('.input-group').find(':text'),
+    //                 log = numFiles > 1 ? numFiles + ' files selected' : label;
+    //
+    //             if( input.length ) {
+    //                 input.val(log);
+    //             } else {
+    //                 if( log ) alert(log);
+    //             }
+    //
+    //         });
+    //     });
+    //
+    // });
 
     /**
      * Back grond body color
      */
-    const className = document.querySelector('#log');
-    window.addEventListener('click',function  () {
-        if (document.querySelector('#log')){
-            $('body').css('background', 'rgba(var(--color-primary-rgb), 0.5)')
-    }else if(document.querySelector('#pos-show')) {
-            $('body').css('background', 'rgba(var(--color-secondary-rgb), 0.8)')
-        }
-    })
-
+    // const className = document.querySelector('#log');
+    // window.addEventListener('click',function  () {
+    //     if (document.querySelector('#log')){
+    //         $('body').css('background', 'rgba(var(--color-primary-rgb), 0.5)')
+    // }else {
+    //         $('body').css('background', 'rgba(var(--color-secondary-rgb), 0.8)')
+    //     }
+    // })
+    //
 
 })
